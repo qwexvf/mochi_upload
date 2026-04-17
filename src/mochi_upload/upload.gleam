@@ -1,4 +1,4 @@
-// mochi/upload.gleam
+// mochi_upload/upload.gleam
 // File upload scalar and utilities for GraphQL file uploads
 
 import gleam/dynamic.{type Dynamic}

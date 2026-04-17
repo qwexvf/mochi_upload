@@ -1,4 +1,4 @@
-// Tests for mochi/upload.gleam - File upload handling
+// Tests for mochi_upload/upload.gleam - File upload handling
 import gleam/list
 import gleeunit/should
 import mochi_upload/upload

@@ -1,4 +1,4 @@
-// mochi/transport/multipart.gleam
+// mochi_upload/multipart.gleam
 // Multipart request parser for GraphQL file uploads
 // Implements the GraphQL multipart request specification:
 // https://github.com/jaydenseric/graphql-multipart-request-spec
