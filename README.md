@@ -4,8 +4,10 @@ File upload support for mochi GraphQL (multipart request spec).
 
 ## Installation
 
-```sh
-gleam add mochi_upload
+```toml
+# gleam.toml
+[dependencies]
+mochi_upload = { git = "https://github.com/qwexvf/mochi_upload", ref = "main" }
 ```
 
 ## Usage
@@ -14,10 +16,8 @@ gleam add mochi_upload
 import mochi_upload/upload
 import mochi_upload/multipart
 
-// Parse multipart upload request
 let files = multipart.parse(request)
 
-// Use Upload scalar in schema
 let schema =
   query.new()
   |> query.add_scalar(upload.scalar())
