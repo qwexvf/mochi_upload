@@ -1,3 +1,6 @@
+> **Active development** — breaking changes may be pushed to `main` at any time.
+> Built with the help of [Claude Code](https://claude.ai/code).
+
 # mochi_upload
 
 File upload support for mochi GraphQL (multipart request spec).
@@ -27,8 +30,4 @@ let schema =
 ## License
 
 Apache-2.0
----
-
-> **Active development** — APIs may change between releases.
-
 Built with the help of [Claude Code](https://claude.ai/code).
