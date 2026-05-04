@@ -1,16 +1,12 @@
-> **Active development** — breaking changes may be pushed to `main` at any time.
-
-
 # mochi_upload
 
-File upload support for mochi GraphQL (multipart request spec).
+File upload support for [mochi](https://github.com/qwexvf/mochi) GraphQL,
+implementing the GraphQL multipart request spec.
 
 ## Installation
 
-```toml
-# gleam.toml
-[dependencies]
-mochi_upload = { git = "https://github.com/qwexvf/mochi_upload", ref = "main" }
+```sh
+gleam add mochi_upload
 ```
 
 ## Usage
@@ -30,6 +26,3 @@ let schema =
 ## License
 
 Apache-2.0
-
----
-Built with the help of [Claude Code](https://claude.ai/code).
