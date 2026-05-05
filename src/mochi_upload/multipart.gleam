@@ -498,12 +498,15 @@ fn apply_file_to_paths(
   file: UploadedFile,
   prefix: String,
 ) -> Result(Dict(String, Dynamic), MultipartError) {
+  // The strip length is fixed for all paths in this batch — compute it
+  // once outside the fold instead of recomputing per iteration.
+  let full_prefix = prefix <> "variables."
+  let strip_len = string.length(full_prefix)
   list.fold(paths, Ok(variables), fn(acc, path) {
     case acc {
       Error(e) -> Error(e)
       Ok(vars) -> {
-        let stripped =
-          string.drop_start(path, string.length(prefix <> "variables."))
+        let stripped = string.drop_start(path, strip_len)
         let segments = string.split(stripped, ".")
         case insert_at_path(vars, segments, upload.to_dynamic(file)) {
           Ok(updated) -> Ok(updated)
