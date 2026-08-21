@@ -118,7 +118,10 @@ pub fn default_config() -> MultipartConfig {
 }
 
 /// Set maximum file size
-pub fn with_max_file_size(config: MultipartConfig, size: Int) -> MultipartConfig {
+pub fn with_max_file_size(
+  config: MultipartConfig,
+  size: Int,
+) -> MultipartConfig {
   MultipartConfig(..config, max_file_size: size)
 }
 
@@ -238,7 +241,9 @@ fn parse_operations(
   }
 }
 
-fn parse_operations_json(json_str: String) -> Result(Operations, MultipartError) {
+fn parse_operations_json(
+  json_str: String,
+) -> Result(Operations, MultipartError) {
   case json.parse(json_str, decode.dynamic) {
     Ok(value) -> {
       // Check if it's an array (batch) or object (single)
@@ -268,7 +273,9 @@ fn parse_operations_json(json_str: String) -> Result(Operations, MultipartError)
   }
 }
 
-fn parse_single_operation(value: Dynamic) -> Result(SingleOperationData, String) {
+fn parse_single_operation(
+  value: Dynamic,
+) -> Result(SingleOperationData, String) {
   let query_result = extract_string_field(value, "query")
   let variables = extract_variables(value)
   let operation_name = extract_operation_name(value)

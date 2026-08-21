@@ -181,7 +181,10 @@ pub fn cleanup(upload: UploadedFile) -> Result(Nil, UploadError) {
 }
 
 /// Move the uploaded file to a permanent location
-pub fn move_to(upload: UploadedFile, destination: String) -> Result(Nil, String) {
+pub fn move_to(
+  upload: UploadedFile,
+  destination: String,
+) -> Result(Nil, String) {
   case simplifile.rename(upload.path, destination) {
     Ok(_) -> Ok(Nil)
     Error(err) -> Error(simplifile.describe_error(err))
@@ -189,7 +192,10 @@ pub fn move_to(upload: UploadedFile, destination: String) -> Result(Nil, String)
 }
 
 /// Copy the uploaded file to a location
-pub fn copy_to(upload: UploadedFile, destination: String) -> Result(Nil, String) {
+pub fn copy_to(
+  upload: UploadedFile,
+  destination: String,
+) -> Result(Nil, String) {
   case simplifile.copy_file(upload.path, destination) {
     Ok(_) -> Ok(Nil)
     Error(err) -> Error(simplifile.describe_error(err))
